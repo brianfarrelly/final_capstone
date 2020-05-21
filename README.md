@@ -103,8 +103,10 @@ Normal CXR vs Bacterial CXR (Robust)
 
 There is only a slight difference between the normal model and the Robust model. The code differences will be shown below.
 
-# This is the "regular models" only using shear range and zoom range which can 
-#get a fairly tight fitting model in a small number of epoch runs.
+
+This is the "regular models" only using shear range and zoom range which can 
+get a fairly tight fitting model in a small number of epoch runs.
+
 
 train_datagen = ImageDataGenerator(
     rescale=1./255,
@@ -119,13 +121,13 @@ valid_datagen = ImageDataGenerator(rescale=1./255)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 
-# This is the ImageDataGenerator for the Robust models.
-# rotation_range, width_shift_range, and height_shift_range image transforms
-# are added. It can take a very long run time of model.fit() 6 hours or so
-# to get a reasonably fit model. The good news is this can accept a much more 
-# diverse set of CXR images. (You can accept CXRs from lazy and incompetant
-# Xray technicians!) This dataset seemed to be picked from pristine Xray images
-# but with variation of images introduced by some children and small adults. 
+ This is the ImageDataGenerator for the Robust models.
+ rotation_range, width_shift_range, and height_shift_range image transforms
+ are added. It can take a very long run time of model.fit() 6 hours or so
+ to get a reasonably fit model. The good news is this can accept a much more 
+ diverse set of CXR images. (You can accept CXRs from lazy and incompetant
+ Xray technicians!) This dataset seemed to be picked from pristine Xray images
+ but with variation of images introduced by some children and small adults. 
 
 train_datagen = ImageDataGenerator(
     rescale=1./255,
